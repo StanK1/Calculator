@@ -7,13 +7,20 @@ buttons.map( button => {
             case 'C':
                 display.innerText = '';
                 break;
-            case '=':
-                try{
-                    display.innerText = eval(display.innerText);
-                } catch {
-                    display.innerText = "Error"
-                }
-                break;
+                case '=':
+                    let result;
+                    try {
+                      result = eval(display.innerText);
+                    } catch {
+                      display.innerText = "Error";
+                      break;
+                    }
+                    if (result === Infinity || result === -Infinity) {
+                      display.innerText = "Error: Division by 0";
+                    } else {
+                      display.innerText = result;
+                    }
+                    break;
             case '←':
                 if (display.innerText){
                    display.innerText = display.innerText.slice(0, -1);
