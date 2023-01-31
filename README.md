@@ -1,4 +1,5 @@
-#Simple JavaScript Calculator
+# Simple JavaScript Calculator
+
 A basic calculator that performs addition, subtraction, multiplication and division.
 
 Usage
