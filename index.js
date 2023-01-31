@@ -7,7 +7,13 @@ buttons.map( button => {
             case 'C':
                 display.innerText = '';
                 break;
-                case '=':
+                case '0':
+                if (display.innerText === '') {
+                  break;
+                }
+                display.innerText += '0';
+                  break;
+                  case '=':
                     let result;
                     try {
                       result = eval(display.innerText);
@@ -21,6 +27,7 @@ buttons.map( button => {
                       display.innerText = result;
                     }
                     break;
+                    
             case '←':
                 if (display.innerText){
                    display.innerText = display.innerText.slice(0, -1);
